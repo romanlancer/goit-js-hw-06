@@ -1,9 +1,19 @@
-const input = document.querySelector('#validation-input');
-input.addEventListener('blur', onValidationInput);
-const b = input.addClass('#validation-input.valid');
+const inputEl = document.querySelector('#validation-input');
 
-function onValidationInput(event) {
-	if (input.length <= input[data - length]) {
-		input.border = input.addClass('#validation-input.valid');
+const totalLength = document.querySelector('input[data-length="6"]');
+// using standard method:
+// const totalLength = inputEl.getAttribute('data-length');
+const initialTotalLength = totalLength.dataset.length;
+// we can also use a parseInt function as well to get length :
+// const initialTotalLength = parseInt(totalLength, 10);
+inputEl.addEventListener('blur', event => {
+	const text = event.currentTarget.value;
+
+	if (text.length <= initialTotalLength) {
+		inputEl.classList.add('valid');
+		inputEl.classList.remove('invalid');
+	} else if (text.length > initialTotalLength) {
+		inputEl.classList.add('invalid');
+		inputEl.classList.remove('valid');
 	}
-}
+});
