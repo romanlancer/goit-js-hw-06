@@ -4,7 +4,7 @@ const totalLength = document.querySelector('input[data-length="6"]');
 // using standard method:
 // const totalLength = inputEl.getAttribute('data-length');
 const initialTotalLength = totalLength.dataset.length;
-// we can also use a parseInt function as well to get length :
+// we can also use a parseInt function as well to get length from an attribute:
 // const initialTotalLength = parseInt(totalLength, 10);
 inputEl.addEventListener('blur', event => {
 	const text = event.currentTarget.value;
