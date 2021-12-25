@@ -1,32 +1,28 @@
-//  <div id="controls">
-//     <input type="number" min="1" max="100" step="1" />
-//     <button type="button" data-create>Create</button>
-//     <button type="button" data-destroy>Destroy</button>
-//   </div>
-
-//   <div id="boxes"></div>
-const controlsInput = document.querySelector('#controls input');
 const dataCreateBtn = document.querySelector('button[data-create]');
 const dataDestroyBtn = document.querySelector('button[data-destroy]');
 const dataBoxes = document.querySelector('#boxes');
 
-controlsInput.addEventListener('input', event => {
-	let amount = event.currentTarget.value;
-
-	console.log(amount);
-});
-
-dataCreateBtn.addEventListener('click', createBoxes);
+dataCreateBtn.addEventListener('click', getAmount);
 dataDestroyBtn.addEventListener('click', destroyBoxes);
 
+function getAmount() {
+	let amount = document.querySelector('#controls input').value;
+
+	createBoxes(amount);
+}
+let initialSize;
 function createBoxes(amount) {
-	const dataItem = document.createElement('div');
-	dataItem.style.backgroundColor = getRandomHexColor();
-	return dataBoxes.appendChild(dataItem);
-	console.log(dataBoxes.append(dataItem));
+	for (let i = 0; i < amount; i++) {
+		initialSize += 10;
+		const dataItem = document.createElement('div');
+		dataItem.style.backgroundColor = getRandomHexColor();
+		dataItem.style.width = `${initialSize}px`;
+		dataItem.style.height = `${initialSize}px`;
+		dataBoxes.append(dataItem);
+	}
+	initialSize = 20;
 }
 
-// createBoxes(amount);
 function destroyBoxes() {
 	dataBoxes.innerHTML = '';
 }
