@@ -2,11 +2,11 @@ const dataCreateBtn = document.querySelector('button[data-create]');
 const dataDestroyBtn = document.querySelector('button[data-destroy]');
 const dataBoxes = document.querySelector('#boxes');
 
-dataCreateBtn.addEventListener('click', getAmount);
+dataCreateBtn.addEventListener('click', getAmountAndSetBoxes);
 dataDestroyBtn.addEventListener('click', destroyBoxes);
 
-function getAmount() {
-	let amount = document.querySelector('#controls input').value;
+function getAmountAndSetBoxes() {
+	const amount = document.querySelector('#controls input').value;
 
 	createBoxes(amount);
 }
