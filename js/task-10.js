@@ -6,21 +6,23 @@ dataCreateBtn.addEventListener('click', getAmountAndSetBoxes);
 dataDestroyBtn.addEventListener('click', destroyBoxes);
 
 function getAmountAndSetBoxes() {
-	const amount = document.querySelector('#controls input').value;
+	const amount = Number(document.querySelector('#controls input').value);
 
 	createBoxes(amount);
 }
-let initialSize;
+let initialSize = 20;
 function createBoxes(amount) {
+	const fragment = document.createDocumentFragment();
 	for (let i = 0; i < amount; i++) {
 		initialSize += 10;
 		const dataItem = document.createElement('div');
 		dataItem.style.backgroundColor = getRandomHexColor();
 		dataItem.style.width = `${initialSize}px`;
 		dataItem.style.height = `${initialSize}px`;
-		dataBoxes.append(dataItem);
+		fragment.append(dataItem);
 	}
 	initialSize = 20;
+	dataBoxes.append(fragment);
 }
 
 function destroyBoxes() {
