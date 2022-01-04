@@ -7,13 +7,13 @@ const initialTotalLength = totalLength.dataset.length;
 // we can also use a parseInt function as well to get length from an attribute:
 // const initialTotalLength = parseInt(totalLength, 10);
 inputEl.addEventListener('blur', event => {
-	const text = event.currentTarget.value;
+	const text = event.target.value;
 
-	if (text.length <= initialTotalLength) {
-		inputEl.classList.add('valid');
-		inputEl.classList.remove('invalid');
-	} else if (text.length > initialTotalLength) {
+	if (text.length < initialTotalLength || text.length > initialTotalLength) {
 		inputEl.classList.add('invalid');
 		inputEl.classList.remove('valid');
+	} else {
+		inputEl.classList.add('valid');
+		inputEl.classList.remove('invalid');
 	}
 });

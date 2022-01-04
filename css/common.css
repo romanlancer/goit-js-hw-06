@@ -25,8 +25,9 @@ button {
 
 img {
 	display: block;
-	max-width: 50%;
+	max-width: 100%;
 	height: auto;
+	margin-bottom: 30px;
 }
 li {
 	list-style-type: none;
@@ -35,8 +36,4 @@ li {
 .gallery {
 	display: flex;
 	flex-direction: column;
-}
-.image {
-	width: 2000px;
-	margin-bottom: 50px;
 }
