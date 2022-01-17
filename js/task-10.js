@@ -1,5 +1,5 @@
-const dataCreateBtn = document.querySelector('button[data-create]');
-const dataDestroyBtn = document.querySelector('button[data-destroy]');
+const dataCreateBtn = document.querySelector('[data-create]');
+const dataDestroyBtn = document.querySelector('[data-destroy]');
 const dataBoxes = document.querySelector('#boxes');
 
 dataCreateBtn.addEventListener('click', getAmountAndSetBoxes);

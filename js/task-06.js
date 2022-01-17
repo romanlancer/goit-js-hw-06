@@ -1,6 +1,6 @@
 const inputEl = document.querySelector('#validation-input');
 
-const totalLength = document.querySelector('input[data-length="6"]');
+const totalLength = document.querySelector('[data-length="6"]');
 // using standard method:
 // const totalLength = inputEl.getAttribute('data-length');
 const initialTotalLength = totalLength.dataset.length;

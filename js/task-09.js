@@ -1,4 +1,3 @@
-const bodyColor = document.querySelector('body');
 const colorOutput = document.querySelector('.color');
 const colorInput = document.querySelector('.change-color');
 
@@ -6,7 +5,7 @@ colorInput.addEventListener('click', onTargetBtn);
 
 function onTargetBtn() {
 	const randomColors = getRandomHexColor();
-	bodyColor.style.backgroundColor = randomColors;
+	document.body.style.backgroundColor = randomColors;
 	colorOutput.textContent = randomColors;
 }
 
